@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/image/favicon-image.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <title>Indian-Mart</title>
+</head>
+<style>
+
+.cart-icon {
+  border: 5px solid rgba(25, 64, 90, 0.705);
+  background-color: rgb(50, 144, 207);
+  display: inline;
+  padding: 20px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20%;
+  left: 90%;
+  cursor: pointer;
+  color: wheat;
+}
+.cart-icon:hover {
+  transform: translateY(-5px);
+box-shadow: 0 5px 15px 2px rgba(65, 179, 255, 0.555);;
+}
+.cart-num {
+  background-color: tomato;
+  border: 1px solid rgba(194, 58, 34, 0.849);
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  position: absolute;
+  display: inline;
+  top: -10%;
+  left: 80%;
+  width: 30px;
+  text-align: center;
+}
+ul {
+  padding: 0 !important;
+}
+.cart-img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+.fa-times-circle {
+  color: tomato !important;
+  cursor: pointer;
+}
+.page-footer{
+    background-color: #a5a6a7;
+}
+
+</style>
+
+<body onload="componentDidMount()">
+
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <img src="./image/favicon-image.png" style="height: 50px; width: auto; margin-left: 30px;" alt="">
+            <a class="navbar-brand" href="./index.html">Indian-Mart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./signup.html">SignUp</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./signin.html">SignIn</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./product.html">Product</a>
+                    </li>
+                </ul>
+                <img style="height: 50px; width: auto; margin-left: 30px; margin-right: 40px;"
+                    src="./image/add to card.png" alt="">
+            </div>
+        </nav>
+    </section>
+
+
+
+    <!-- Product card start -->
+    <div class="text-area">
+        <hr>
+        <div class="container">
+            <div class="row" id="product" ></div>
+            <div class="cart-icon" onclick="handleOpenCart()">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="cart-num" id="cart-items-number">0</span>
+        </div>
+        </div>
+        </div>>
+          <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary d-none" id="open_cart" data-toggle="modal" data-target="#open_cart_modal">
+      open cart
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="open_cart_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog rounded-0" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title" id="exampleModalLabel">My Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul id="cart-items"></ul>
+            <div class="row price">
+              <div class="col-6">
+                Total Price
+              </div>
+              <div class="col-6">
+                <div style="display: inline-block;" class="float-right" id="price"></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger rounded-0" id="close_cart" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning rounded-0" onclick="handleCheckout()">Checkout </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer sectio start -->
+    <footer class="page-footer font-small unique-color-dark pt-4">
+        <div class="container">
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <h5 class="mb-1">Register for free</h5>
+                </li>
+                <li class="list-inline-item">
+                    <a href="./signup.html" class="btn btn-outline-dark btn-rounded">Sign up!</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-copyright text-center py-3">© 2022 Copyright:
+            <a href="#"> Jin Ustad</a>
+        </div>
+    </footer>
+    <!-- footer sectio end -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+    <script src="./pro-script.js"></script>
+
+</body>
+
+</html>

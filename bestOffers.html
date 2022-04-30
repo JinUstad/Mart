@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/image/favicon-image.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <link rel="stylesheet" href="sweetalert2.min.css">
+        <link rel="stylesheet" href="./style-sec.css">
+    <title>Indian-Mart</title>
+</head>
+
+<body onload="componentMount()">
+
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <img src="./image/favicon-image.png" style="height: 50px; width: auto; margin-left: 30px;" alt="">
+            <a class="navbar-brand" href="./index.html">Indian-Mart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" onclick="logout()">Logout <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <img style="height: 50px; width: auto; margin-left: 30px; margin-right: 40px;"
+                    src="./image/add to card.png" alt="">
+            </div>
+        </nav>
+    </section>
+
+    <div class="main-hero">
+        <div>
+            <img src="./image/bstoffer.jpeg" alt="">
+        </div>
+    </div>
+
+
+    <!-- cart icon start -->
+    <div class="main container">
+        <div class="row" id="products"></div>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart" onclick="handleCart()"></i>
+            <span class="cart-count" id="add_cart_count">0</span>
+        </div>
+    </div>
+    <!-- cart icon end -->
+
+       <!-- Button trigger modal -->
+       <button type="button" class="btn btn-primary d-none" id="open_cart" data-toggle="modal" data-target="#open_cart_modal">
+        open cart
+      </button>
+      
+    <!-- Modal -->
+    <div class="modal fade" id="open_cart_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-0" role="document">
+          <div class="modal-content rounded-0">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title" id="exampleModalLabel">My Cart</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul id="cart-items"></ul>
+              <div class="row price">
+                <div class="col-6">
+                  Total Price
+                </div>
+                <div class="col-6">
+                  <div style="display: inline-block;" class="float-right" id="price"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger rounded-0" id="close_cart" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-warning rounded-0" onclick="handleCheckout()">Checkout </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <footer class="page-footer font-small  bg-secondary unique-color-dark pt-4">
+
+
+        <div class="footer-copyright text-center py-3">© 2022 Copyright:
+            <a href="#"> Jin Ustad</a>
+        </div>
+    </footer>
+    <!-- footer sectio end -->
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="./offer-script.js"></script>
+
+</html>

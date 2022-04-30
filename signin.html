@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/image/favicon-image.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Indian-Mart</title>
+</head>
+
+<body>
+    <!-- Navbar section start -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="./image/favicon-image.png" style="height: 50px; width: auto; margin-left: 30px;" alt="">
+            <a class="navbar-brand" href="./index.html">Indian-Mart</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./signup.html">SignUp</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./signin.html">SignIn</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./product.html">Product</a>
+                    </li>
+                </ul>
+                <img style="height: 50px; width: auto; margin-left: 30px; margin-right: 40px;"
+                src="./image/add to card.png" alt="">
+            </div>
+        </nav>
+    <!-- Navbar section start -->
+     
+    
+    <!-- contact from section start -->
+    <section class="signup  container">
+     <p class="bst-offer text-center">Get Best Offer Product Plz SignIn Now</p>
+     <hr>
+     <div class="row ">
+         <div class="col-md-6 from  form">
+             <label for="">E-mail</label>
+             <input type="email" placeholder="Enter Your Mail" id="semail" class="form-control">
+             <label for="">Password</label>
+             <input type="password" placeholder="Enter Your Name" id="spassword" class="form-control">
+             <button class="w-100 mt-3 btn btn-success" onclick="signAccount()">Submit</button>
+             <a  href="./signup.html" class="signup-link">SignUp Here!</a>
+
+         </div>
+         <div class="col-md-6">
+            <img class="object" style="height: 600px;" src="./image/singin.png" alt="">
+     </div>
+    
+    </section>
+    <!-- contact from section  end -->
+
+ <!-- footer sectio start -->
+ <footer class="page-footer font-small unique-color-dark pt-4">
+    <div class="container">
+        <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+                <h5 class="mb-1">Register for free</h5>
+            </li>
+            <li class="list-inline-item">
+                <a href="./signup.html" class="btn btn-outline-dark btn-rounded">Sign up!</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+        <a href="#"> Jin Ustad</a>
+    </div>
+</footer>
+<!-- footer sectio end -->
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    AOS.init();
+</script>
+<script src="./script.js"></script>
+</html>
